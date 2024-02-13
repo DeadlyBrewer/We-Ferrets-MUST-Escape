@@ -11,5 +11,5 @@ func useKey():
 	queue_free() # Destory Key
 
 func _on_interact():
-	Global_Func.debug("Green Key Interact")
+	DEBUG.dprint("Green Key Interact")
 

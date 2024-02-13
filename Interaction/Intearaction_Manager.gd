@@ -13,12 +13,12 @@ var can_interact = true
 	#label.
 
 func register_area(area: Interaction_Area):
-	Global_Func.debug(" Interaction_Manager: register_area")
+	DEBUG.dprint(" Interaction_Manager: register_area")
 	active_areas.push_back(area)
 	
 
 func unregister_area(area: Interaction_Area):
-	Global_Func.debug(" Interaction_Manager: unregister_area")
+	DEBUG.dprint(" Interaction_Manager: unregister_area")
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)
@@ -26,7 +26,7 @@ func unregister_area(area: Interaction_Area):
 
 func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
-		#Global_Func.debug(" Interaction_Manager: _process")
+		#DEBUG.dprint(" Interaction_Manager: _process")
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
@@ -43,9 +43,9 @@ func _sort_by_distance_to_player(area1, area2):
 
 func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
-		#Global_Func.debug(" Interaction_Manager: _input")
-		#Global_Func.debug(" Interaction_Manager: player %s" % player.name)
-		#Global_Func.debug(" Interaction_Manager: active_areas %s" % active_areas.size())
+		#DEBUG.dprint(" Interaction_Manager: _input")
+		#DEBUG.dprint(" Interaction_Manager: player %s" % player.name)
+		#DEBUG.dprint(" Interaction_Manager: active_areas %s" % active_areas.size())
 		if active_areas.size () > 0:
 			can_interact = false
 			label.hide()
