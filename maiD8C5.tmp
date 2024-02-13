@@ -114,11 +114,11 @@ position_smoothing_speed = 20.0
 unique_name_in_owner = true
 script = ExtResource("5_dcaxc")
 
-[node name="Blue_Key" parent="." instance=ExtResource("6_01psl")]
-position = Vector2(135, 75)
+[node name="Node2D" parent="." instance=ExtResource("6_01psl")]
+position = Vector2(144, 70)
 
-[node name="Green_Key" parent="." instance=ExtResource("7_atbon")]
-position = Vector2(194, 78)
+[node name="Node2D2" parent="." instance=ExtResource("7_atbon")]
+position = Vector2(206, 66)
 
-[node name="Red_Key" parent="." instance=ExtResource("4_ay5es")]
-position = Vector2(262, 80)
+[node name="Node2D3" parent="." instance=ExtResource("4_ay5es")]
+position = Vector2(287, 74)

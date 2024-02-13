@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cg4c04eu58hhh"]
 
-[ext_resource type="Script" path="res://Scene/DebugBlockCharacter.gd" id="1_8ip7s"]
-[ext_resource type="Texture2D" uid="uid://d05cpwgej8ric" path="res://Characters/tile_0012.png" id="1_fat6d"]
-[ext_resource type="Texture2D" uid="uid://b8hoa26gf5w7f" path="res://Characters/tile_0011.png" id="2_1snlw"]
+[ext_resource type="Texture2D" uid="uid://d05cpwgej8ric" path="res://Assets/Characters/tile_0012.png" id="1_fat6d"]
+[ext_resource type="Script" path="res://Scene/Scripts/DebugBlockCharacter.gd" id="1_xjq6t"]
+[ext_resource type="Texture2D" uid="uid://b8hoa26gf5w7f" path="res://Assets/Characters/tile_0011.png" id="2_1snlw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_76pfl"]
 animations = [{
@@ -26,8 +26,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xudjd"]
 size = Vector2(18, 18)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_8ip7s")
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_xjq6t")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
