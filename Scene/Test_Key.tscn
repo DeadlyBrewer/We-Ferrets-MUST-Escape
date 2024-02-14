@@ -1,18 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://uu7nm8am4rpi"]
+[gd_scene load_steps=5 format=3 uid="uid://uu7nm8am4rpi"]
 
 [ext_resource type="Texture2D" uid="uid://dxjkm1rnc1gek" path="res://Assets/Objects/_key.png" id="1_oeeo6"]
 [ext_resource type="Script" path="res://Interaction/Interaction_Area/Interaction_Area.gd" id="1_tqd7n"]
+[ext_resource type="Script" path="res://Scene/Scripts/Test_Key.gd" id="1_vqmwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
 
-[node name="Test_Key" type="Node2D"]
+[node name="Key" type="Node2D"]
+script = ExtResource("1_vqmwy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oeeo6")
 
 [node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
 script = ExtResource("1_tqd7n")
-action_name = "Test Key"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
 shape = SubResource("CircleShape2D_bcemw")
