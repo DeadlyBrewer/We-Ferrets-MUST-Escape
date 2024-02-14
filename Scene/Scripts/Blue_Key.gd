@@ -1,12 +1,17 @@
 extends Node2D
 
+class_name Key
+
 @onready var interaction_area = $Interaction_Area
 @onready var data = get_node("/root/Global_Data")
-var follow_player = false
+var key_color
+var follow_player 
 
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
+	follow_player = false
 	interaction_area.interact = Callable(self, "_on_interact")
+	key_color = Global_Func.Key_Color.BLUE
 	
 func _physics_process(delta):
 	if follow_player:

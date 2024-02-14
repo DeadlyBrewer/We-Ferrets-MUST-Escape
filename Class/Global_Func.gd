@@ -3,7 +3,7 @@ extends Node
 # Set debugging mode
 # 0: off | 1: on
 
-enum KeyColor {
+enum Key_Color {
 	RED,
 	GREEN,
 	BLUE
