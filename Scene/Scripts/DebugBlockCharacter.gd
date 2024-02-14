@@ -10,11 +10,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var action = false
 
 func _physics_process(delta):
-	
-
-	# Handle jump.
-	#@onready var sprite_2d = $Sprite2D
-
 	# Moving Animations
 	if (velocity.x >= 1 || velocity.x <= -1 || velocity.y >= 1 || velocity.y <= -1):
 		sprite_2d.animation = "moving"

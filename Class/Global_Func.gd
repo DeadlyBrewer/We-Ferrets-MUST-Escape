@@ -2,7 +2,6 @@ extends Node
 
 # Set debugging mode
 # 0: off | 1: on
-const DEBUG_MODE = 1
 
 enum KeyColor {
 	RED,

@@ -1,5 +1,5 @@
 extends Node
-
+#class_name DEBUG
 const DEBUG_MODE = 1
 
 # Called when the node enters the scene tree for the first time.
