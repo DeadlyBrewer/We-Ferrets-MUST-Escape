@@ -24,8 +24,8 @@ func useKey():
 	queue_free() # Destory Key
 
 func _on_interact():
-	DEBUG.dprint("Test Key Interact")
-	DEBUG.dprint(" Interaction_Manager: var data.has_object -> %s" % data.has_object)
+	#DEBUG.dprint("Test Key Interact")
+	#DEBUG.dprint(" Interaction_Manager: var data.has_object -> %s" % data.has_object)
 	# If player has a key, drop key
 	if !follow_player:
 		#data.has_object = true

@@ -1,17 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://gini068v7wke"]
+[gd_scene load_steps=5 format=3 uid="uid://brimuifupmxek"]
 
-[ext_resource type="Texture2D" uid="uid://dxjkm1rnc1gek" path="res://Assets/Objects/_key.png" id="1_c4iv1"]
 [ext_resource type="Script" path="res://Scene/Scripts/Blue_Key.gd" id="1_f65fv"]
+[ext_resource type="Texture2D" uid="uid://ktvdugx1fmtu" path="res://Assets/Objects/blue_key.png" id="2_ankho"]
 [ext_resource type="Script" path="res://Interaction/Interaction_Area/Interaction_Area.gd" id="3_a8hnx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_whq4j"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
 
-[node name="Blue Key" type="Node2D"]
+[node name="Blue_Key" type="Node2D"]
 script = ExtResource("1_f65fv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_c4iv1")
+texture = ExtResource("2_ankho")
 
 [node name="Interaction_Area" type="Area2D" parent="."]
 collision_layer = 0
@@ -19,4 +18,4 @@ collision_mask = 10
 script = ExtResource("3_a8hnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
-shape = SubResource("CircleShape2D_whq4j")
+shape = SubResource("CircleShape2D_bcemw")

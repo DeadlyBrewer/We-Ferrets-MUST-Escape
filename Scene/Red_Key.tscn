@@ -1,23 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgfjd1d8r3mh"]
+[gd_scene load_steps=5 format=3 uid="uid://ckrrkj5wl6dgi"]
 
 [ext_resource type="Script" path="res://Scene/Scripts/Red_Key.gd" id="1_2w83t"]
-[ext_resource type="Texture2D" uid="uid://dxjkm1rnc1gek" path="res://Assets/Objects/_key.png" id="1_u330k"]
+[ext_resource type="Texture2D" uid="uid://x8gwlma7unwk" path="res://Assets/Objects/red_key.png" id="2_mh76n"]
 [ext_resource type="Script" path="res://Interaction/Interaction_Area/Interaction_Area.gd" id="3_28yxu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q6un7"]
-radius = 11.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Red_Key" type="Node2D"]
 script = ExtResource("1_2w83t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_u330k")
+texture = ExtResource("2_mh76n")
 
 [node name="Interaction_Area" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("3_28yxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
-shape = SubResource("CircleShape2D_q6un7")
+shape = SubResource("CircleShape2D_bcemw")

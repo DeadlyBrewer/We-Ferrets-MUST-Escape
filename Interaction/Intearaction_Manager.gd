@@ -13,12 +13,12 @@ var can_interact = true
 	#label.
 
 func register_area(area: Interaction_Area):
-	DEBUG.dprint(" Interaction_Manager: register_area")
+	#DEBUG.dprint(" Interaction_Manager: register_area")
 	active_areas.push_back(area)
 	
 
 func unregister_area(area: Interaction_Area):
-	DEBUG.dprint(" Interaction_Manager: unregister_area")
+	#DEBUG.dprint(" Interaction_Manager: unregister_area")
 	var index = active_areas.find(area)
 	if index != -1:
 		active_areas.remove_at(index)

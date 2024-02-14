@@ -25,9 +25,9 @@ func _process(delta):
 
 
 func get_has_object() -> bool:
-	DEBUG.dprint(" Global_data: get_has_object -> %s" % has_object)
+	#DEBUG.dprint(" Global_data: get_has_object -> %s" % has_object)
 	return has_object
 
 func invert_has_object():
 	has_object = !has_object
-	DEBUG.dprint(" Global_data: invert_has_object -> %s" % has_object)
+	#DEBUG.dprint(" Global_data: invert_has_object -> %s" % has_object)

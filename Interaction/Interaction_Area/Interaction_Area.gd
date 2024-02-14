@@ -15,12 +15,12 @@ func _process(delta):
 	pass
 
 func _on_body_entered(_body):
-	DEBUG.dprint("Interaction_Area: _on_body_entered")
+	#DEBUG.dprint("Interaction_Area: _on_body_entered")
 	Intearaction_Manager.register_area(self)
 
 
 func _on_body_exited(_body):
-	DEBUG.dprint("Interaction_Area: _on_body_exited")
+	#DEBUG.dprint("Interaction_Area: _on_body_exited")
 	Intearaction_Manager.unregister_area(self)
 	
 func get_action_name():
