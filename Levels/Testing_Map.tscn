@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bplst85m61ha6"]
+[gd_scene load_steps=10 format=3 uid="uid://bplst85m61ha6"]
 
 [ext_resource type="Texture2D" uid="uid://sah4tegb5g8n" path="res://Assets/Backgrounds/backgroundColorGrass.png" id="1_2qc3x"]
 [ext_resource type="Texture2D" uid="uid://ceck3a0kqqp7x" path="res://Tiles/Walls.png" id="2_xxlmd"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gini068v7wke" path="res://Scene/Blue_Key.tscn" id="5_v25mm"]
 [ext_resource type="PackedScene" uid="uid://c75o5onamwc4h" path="res://Scene/Green_Key.tscn" id="6_5d866"]
 [ext_resource type="PackedScene" uid="uid://dgfjd1d8r3mh" path="res://Scene/Red_Key.tscn" id="7_fwlc3"]
+[ext_resource type="PackedScene" uid="uid://uu7nm8am4rpi" path="res://Scene/Test_Key.tscn" id="7_urovh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqu6j"]
 texture = ExtResource("2_xxlmd")
@@ -118,7 +119,7 @@ layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 131072, 0, 2, 131072, 0, 3, 131
 
 [node name="Blue_Key" parent="Testing_Map" instance=ExtResource("5_v25mm")]
 y_sort_enabled = true
-position = Vector2(133, 75)
+position = Vector2(264, 164)
 
 [node name="Green_Key" parent="Testing_Map" instance=ExtResource("6_5d866")]
 y_sort_enabled = true
@@ -127,3 +128,6 @@ position = Vector2(93, 179)
 [node name="Red_Key" parent="Testing_Map" instance=ExtResource("7_fwlc3")]
 y_sort_enabled = true
 position = Vector2(155, 211)
+
+[node name="Test_Key" parent="Testing_Map" instance=ExtResource("7_urovh")]
+position = Vector2(165, 73)
