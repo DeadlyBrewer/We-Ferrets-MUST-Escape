@@ -7,6 +7,7 @@ extends Node2D
 const base_text = "[center]"
 
 var active_areas = []
+var mouse_area = []
 var can_interact = true
 
 #func _ready():
@@ -23,7 +24,6 @@ func unregister_area(area: Interaction_Area):
 	if index != -1:
 		active_areas.remove_at(index)
 
-
 func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
 		#DEBUG.dprint(" Interaction_Manager: _process")
@@ -35,6 +35,8 @@ func _process(_delta):
 		label.show()
 	else:
 		label.hide()
+		
+	
 		
 func _sort_by_distance_to_player(area1, area2):
 	var area1_to_player = player.global_position.distance_to(area1.global_position)

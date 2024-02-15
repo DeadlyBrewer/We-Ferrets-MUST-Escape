@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://205nj156teo4"]
+
+[ext_resource type="Script" path="res://Interactions/Mouse/Mouse_Interaction.gd" id="1_er7t3"]
+[ext_resource type="FontFile" uid="uid://depfmd6ih6qg6" path="res://Assets/Fonts/Friday School.otf" id="2_e03bi"]
+
+[node name="Mouse_Interaction" type="Area2D"]
+script = ExtResource("1_er7t3")
+
+[node name="Label" type="RichTextLabel" parent="."]
+z_index = 20
+texture_filter = 1
+offset_right = 70.0
+offset_bottom = 21.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_e03bi")
+bbcode_enabled = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

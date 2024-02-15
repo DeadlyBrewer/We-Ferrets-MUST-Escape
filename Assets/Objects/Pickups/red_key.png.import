@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://82kwe6jekeaa"
-path="res://.godot/imported/green_key.png-475ccc939ab6df67dc36072cfa894c34.ctex"
+uid="uid://x8gwlma7unwk"
+path="res://.godot/imported/red_key.png-17120f14da433ee4560a13496403dd04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/green_key.png"
-dest_files=["res://.godot/imported/green_key.png-475ccc939ab6df67dc36072cfa894c34.ctex"]
+source_file="res://Assets/Objects/Pickups/red_key.png"
+dest_files=["res://.godot/imported/red_key.png-17120f14da433ee4560a13496403dd04.ctex"]
 
 [params]
 

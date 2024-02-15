@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Intearaction_Manager="*res://Interaction/Intearaction_Manager.tscn"
+Intearaction_Manager="*res://Interactions/Character/Intearaction_Manager.tscn"
 Global_Func="*res://Class/Global_Func.gd"
 DEBUG="*res://Class/DEBUG.gd"
 Global_Data="*res://Class/Global_Data.gd"

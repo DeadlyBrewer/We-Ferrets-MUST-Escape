@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ktvdugx1fmtu"
-path="res://.godot/imported/blue_key.png-772f22c8185915e70b58768347e2540b.ctex"
+uid="uid://descp518mxnag"
+path="res://.godot/imported/green_door.png-4b25a1526953a961eb04edaf1abe2447.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/blue_key.png"
-dest_files=["res://.godot/imported/blue_key.png-772f22c8185915e70b58768347e2540b.ctex"]
+source_file="res://Assets/Objects/green_door.png"
+dest_files=["res://.godot/imported/green_door.png-4b25a1526953a961eb04edaf1abe2447.ctex"]
 
 [params]
 

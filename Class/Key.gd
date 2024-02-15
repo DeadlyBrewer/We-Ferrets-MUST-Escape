@@ -3,6 +3,7 @@ extends Node2D
 class_name Key
 
 @onready var interaction_area = $Interaction_Area
+@onready var mouse_interaction = $Mouse_Interaction
 @onready var data = get_node("/root/Global_Data")
 var key_color
 var follow_player 

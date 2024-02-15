@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://icaq7yrp3upb"]
 
-[ext_resource type="Script" path="res://Interaction/Intearaction_Manager.gd" id="1_uwdxf"]
-[ext_resource type="FontFile" uid="uid://depfmd6ih6qg6" path="res://Assets/Fonts/Friday School.otf" id="2_0guix"]
+[ext_resource type="Script" path="res://Interactions/Character/Intearaction_Manager.gd" id="1_lyh4a"]
+[ext_resource type="FontFile" uid="uid://depfmd6ih6qg6" path="res://Assets/Fonts/Friday School.otf" id="2_5p23i"]
 
 [node name="IntearactionManager" type="Node2D"]
-script = ExtResource("1_uwdxf")
+script = ExtResource("1_lyh4a")
 
 [node name="Label" type="RichTextLabel" parent="."]
 z_index = 20
@@ -18,7 +18,7 @@ offset_right = 62.0
 offset_bottom = -14.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("2_0guix")
+theme_override_fonts/normal_font = ExtResource("2_5p23i")
 bbcode_enabled = true
 text = "[center][E] To Interact[/center]"
 visible_characters_behavior = 1
