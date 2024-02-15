@@ -3,6 +3,7 @@ extends Area2D
 @onready var label = $Label
 var over_text: String = "Mouse_Over"
 var show_label = false
+var carry_type
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,11 +15,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if show_label:
-		label.text = "[center]" + over_text
-		label.global_position = global_position
-		label.global_position.y -= 36
-		label.global_position.x -= label.size.x / 2
-		label.show()
+		if carry_type == Global_Func.Carry_Type.KEY:
+			label.text = "[center]" + over_text
+			label.global_position = global_position
+			label.global_position.y -= 36
+			label.global_position.x -= label.size.x / 2
+			label.show()
 	else:
 		label.hide()
 
@@ -36,5 +38,11 @@ func _on_mouse_exited():
 func set_over_text(new_text):
 	over_text = new_text
 	
-func get_over_text():
+func get_over_text() -> String:
 	return over_text
+	
+func set_carry_type(new_carry_type):
+	carry_type = new_carry_type
+
+func get_carry_type() -> int:
+	return carry_type

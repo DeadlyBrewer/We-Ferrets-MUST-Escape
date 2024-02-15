@@ -12,7 +12,7 @@ var follow_player
 func _ready(): 
 	follow_player = false
 	interaction_area.interact = Callable(self, "_on_interact")
-	key_color = Global_Func.Key_Color.BLUE
+	mouse_interaction.set_carry_type(Global_Func.Carry_Type.KEY)
 	
 func _physics_process(delta):
 	if follow_player:
@@ -21,7 +21,7 @@ func _physics_process(delta):
 func _process(delta):
 	pass
 
-func useKey():
+func use_Key():
 	queue_free() # Destory Key
 
 func _on_interact():
@@ -31,9 +31,13 @@ func _on_interact():
 	if !follow_player:
 		#data.has_object = true
 		follow_player = true
+		Global_Data.set_object_type_being_carried(Global_Func.Carry_Type.KEY)
+		Global_Data.set_object_being_carried(self)
 	else:
 		#data.has_object = false
 		follow_player = false
+		Global_Data.clear_object_type_being_carried()
+		Global_Data.clear_object_being_carried()
 		
 	data.invert_has_object()
 	

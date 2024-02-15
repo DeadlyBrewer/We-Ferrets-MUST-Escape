@@ -9,6 +9,12 @@ enum Key_Color {
 	BLUE,
 	TEST
 }
+
+enum Carry_Type {
+	NONE,
+	KEY,
+	DOOR
+}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
