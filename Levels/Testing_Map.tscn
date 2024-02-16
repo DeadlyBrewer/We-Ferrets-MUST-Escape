@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://bplst85m61ha6"]
+[gd_scene load_steps=12 format=3 uid="uid://bplst85m61ha6"]
 
 [ext_resource type="Texture2D" uid="uid://sah4tegb5g8n" path="res://Assets/Backgrounds/backgroundColorGrass.png" id="1_2qc3x"]
 [ext_resource type="Texture2D" uid="uid://ceck3a0kqqp7x" path="res://Tiles/Walls.png" id="2_xxlmd"]
 [ext_resource type="PackedScene" uid="uid://cg4c04eu58hhh" path="res://Scene/Player.tscn" id="3_7gcdp"]
 [ext_resource type="PackedScene" uid="uid://brimuifupmxek" path="res://Scene/Blue_Key.tscn" id="5_v25mm"]
-[ext_resource type="PackedScene" uid="uid://d00wfnbbi84im" path="res://Scene/Door.tscn" id="7_7rsvi"]
+[ext_resource type="PackedScene" uid="uid://d00wfnbbi84im" path="res://Scene/Green_Door.tscn" id="7_7rsvi"]
 [ext_resource type="PackedScene" uid="uid://ckrrkj5wl6dgi" path="res://Scene/Red_Key.tscn" id="7_fwlc3"]
 [ext_resource type="PackedScene" uid="uid://uu7nm8am4rpi" path="res://Scene/Green_Key.tscn" id="7_urovh"]
+[ext_resource type="PackedScene" uid="uid://chawxhtxalls6" path="res://Scene/Red_Door.tscn" id="8_dspaj"]
+[ext_resource type="PackedScene" uid="uid://csgantihcorb4" path="res://Scene/Blue_Door.tscn" id="9_22pkr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqu6j"]
 texture = ExtResource("2_xxlmd")
@@ -129,3 +131,9 @@ position = Vector2(363, 219)
 
 [node name="Door" parent="Testing_Map" instance=ExtResource("7_7rsvi")]
 position = Vector2(456, 72)
+
+[node name="Red_Door" parent="." instance=ExtResource("8_dspaj")]
+position = Vector2(109, 168)
+
+[node name="Blue_Door" parent="." instance=ExtResource("9_22pkr")]
+position = Vector2(457, 360)

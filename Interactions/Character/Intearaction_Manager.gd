@@ -27,11 +27,11 @@ func unregister_area(area: Interaction_Area):
 		active_areas.remove_at(index)
 
 func register_door(area: Door_Area):
-	DEBUG.dprint(" Interaction_Manager: register_door")
+	#DEBUG.dprint(" Interaction_Manager: register_door")
 	door_area.push_back(area)
 	
 func unregister_door(area: Door_Area):
-	DEBUG.dprint(" Interaction_Manager: unregister_door")
+	#DEBUG.dprint(" Interaction_Manager: unregister_door")
 	var index = door_area.find(area)
 	if index != -1:
 		door_area.remove_at(index)
@@ -60,7 +60,7 @@ func _input(event):
 		if door_area.size() > 0:
 			if Global_Data.object_type_being_carried == Global_Func.Carry_Type.KEY:
 				if door_area[0].get_door().get_key_color() == Global_Data.object_being_carried.get_key_color():
-					DEBUG.dprint("Key and Door Interact")
+					#DEBUG.dprint("Key and Door Interact")
 					door_area[0].door.open_door()
 					Global_Data.object_being_carried.use_key()
 		# Labels
