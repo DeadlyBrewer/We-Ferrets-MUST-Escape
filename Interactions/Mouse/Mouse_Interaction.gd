@@ -15,12 +15,17 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if show_label:
+		label.text = "[center]" + over_text + "[/center]"
 		if carry_type == Global_Func.Carry_Type.KEY:
-			label.text = "[center]" + over_text
 			label.global_position = global_position
 			label.global_position.y -= 36
 			label.global_position.x -= label.size.x / 2
-			label.show()
+		if carry_type == Global_Func.Carry_Type.DOOR:
+			label.global_position = global_position
+			label.global_position.y -= 50
+			label.global_position.x -= 80
+			label.scale = Vector2(0.5, 0.5)
+		label.show()
 	else:
 		label.hide()
 
