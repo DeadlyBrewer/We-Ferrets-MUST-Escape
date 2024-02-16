@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d00wfnbbi84im"]
+[gd_scene load_steps=8 format=3 uid="uid://d00wfnbbi84im"]
 
 [ext_resource type="Texture2D" uid="uid://descp518mxnag" path="res://Assets/Objects/green_door.png" id="1_c7r7y"]
 [ext_resource type="Script" path="res://Class/Door.gd" id="2_3pjjm"]
 [ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Mouse_Interaction.tscn" id="2_lio6i"]
+[ext_resource type="Script" path="res://Interactions/Character/Door_Area.gd" id="4_4s1k8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yqlr"]
 size = Vector2(12, 18)
@@ -14,10 +15,12 @@ height = 18.75
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqy1q"]
 radius = 20.0
 
-[node name="Door" type="Sprite2D"]
+[node name="Door" type="Node2D"]
 scale = Vector2(2, 2.66667)
-texture = ExtResource("1_c7r7y")
 script = ExtResource("2_3pjjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_c7r7y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -35,7 +38,11 @@ shape = SubResource("CapsuleShape2D_0leqs")
 
 [node name="Unlock_Area" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 2
+script = ExtResource("4_4s1k8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Unlock_Area"]
 shape = SubResource("CircleShape2D_dqy1q")
+
+[connection signal="body_entered" from="Unlock_Area" to="Unlock_Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Unlock_Area" to="Unlock_Area" method="_on_body_exited"]

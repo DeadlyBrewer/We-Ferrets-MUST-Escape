@@ -10,6 +10,8 @@ var active_areas = []
 var mouse_area = []
 var can_interact = true
 
+var door_area = []
+
 #func _ready():
 	#label.
 
@@ -24,6 +26,16 @@ func unregister_area(area: Interaction_Area):
 	if index != -1:
 		active_areas.remove_at(index)
 
+func register_door(area: Door_Area):
+	DEBUG.dprint(" Interaction_Manager: register_door")
+	door_area.push_back(area)
+	
+func unregister_door(area: Door_Area):
+	DEBUG.dprint(" Interaction_Manager: unregister_door")
+	var index = door_area.find(area)
+	if index != -1:
+		door_area.remove_at(index)
+
 func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
 		#DEBUG.dprint(" Interaction_Manager: _process")
@@ -35,8 +47,7 @@ func _process(_delta):
 		label.show()
 	else:
 		label.hide()
-		
-	
+			
 		
 func _sort_by_distance_to_player(area1, area2):
 	var area1_to_player = player.global_position.distance_to(area1.global_position)
@@ -45,11 +56,18 @@ func _sort_by_distance_to_player(area1, area2):
 
 func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
-		#DEBUG.dprint(" Interaction_Manager: _input")
-		#DEBUG.dprint(" Interaction_Manager: player %s" % player.name)
-		#DEBUG.dprint(" Interaction_Manager: active_areas %s" % active_areas.size())
-		if active_areas.size () > 0:
+		# Open Door
+		if door_area.size() > 0:
+			if Global_Data.object_type_being_carried == Global_Func.Carry_Type.KEY:
+				if door_area[0].get_door().get_key_color() == Global_Data.object_being_carried.get_key_color():
+					DEBUG.dprint("Key and Door Interact")
+					door_area[0].door.open_door()
+					Global_Data.object_being_carried.use_key()
+		# Labels
+		if active_areas.size() > 0:
 			can_interact = false
 			label.hide()
-			await active_areas[0].interact.call()
+			await active_areas[0].interact.call() 
 			can_interact = true
+		
+				

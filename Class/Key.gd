@@ -18,10 +18,10 @@ func _physics_process(delta):
 	if follow_player:
 		position = data.player_pos
 	
-func _process(delta):
-	pass
+func get_key_color():
+	return key_color
 
-func use_Key():
+func use_key():
 	queue_free() # Destory Key
 
 func _on_interact():

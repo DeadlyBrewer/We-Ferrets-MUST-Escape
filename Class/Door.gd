@@ -13,9 +13,7 @@ func _ready():
 	key_color = Global_Func.Key_Color.GREEN
 	mouse_interaction.set_carry_type(Global_Func.Carry_Type.DOOR)
 	mouse_interaction.set_over_text(door_name)
-	unlock_area.interact = Callable(self, "_on_interact")
-
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -25,3 +23,6 @@ func open_door():
 
 func _on_interact():
 	DEBUG.dprint("Door: _on_interact")
+	
+func get_key_color():
+	return key_color
