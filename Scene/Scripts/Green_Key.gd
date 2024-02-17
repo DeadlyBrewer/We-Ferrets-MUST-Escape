@@ -10,7 +10,7 @@ func _ready():
 	super._ready()
 	key_color = local_key_color
 	interaction_area.set_action_name(key_name)
-	mouse_interaction.set_over_text(key_name)
+	interaction_mouse.set_over_text(key_name)
 
 
 

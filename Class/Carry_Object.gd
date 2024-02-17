@@ -3,7 +3,7 @@ class_name Carry_Object
 
 @onready var data = get_node("/root/Global_Data")
 @onready var interaction_area = $Interaction_Area
-@onready var mouse_interaction = $Mouse_Interaction
+@onready var interaction_mouse = $Mouse_Interaction
 
 var carry_weight
 var follow_player

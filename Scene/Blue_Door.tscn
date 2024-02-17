@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scene/Scripts/Blue_Door.gd" id="1_f53nf"]
 [ext_resource type="Texture2D" uid="uid://dswje5tlxmosm" path="res://Assets/Objects/blue_door.png" id="2_0uwpg"]
-[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Mouse_Interaction.tscn" id="3_eb62w"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="3_eb62w"]
 [ext_resource type="Script" path="res://Interactions/Character/Door_Area.gd" id="4_i80md"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yqlr"]
