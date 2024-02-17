@@ -8,8 +8,8 @@ var carry_type
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.hide()
-	mouse_entered.connect(_on_mouse_entered)
-	mouse_exited.connect(_on_mouse_exited)
+	#mouse_entered.connect(_on_mouse_entered)
+	#mouse_exited.connect(_on_mouse_exited)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +38,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	show_label = false
 	#DEBUG.dprint("Mouse_Interaction: _on_mouse_exited | %s" % show_label)
-	
+
 
 func set_over_text(new_text):
 	over_text = new_text

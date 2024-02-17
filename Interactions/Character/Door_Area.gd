@@ -4,11 +4,11 @@ class_name Door_Area
 @onready var door = $".."
 	
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	Intearaction_Manager.register_door(self)
 
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	Intearaction_Manager.unregister_door(self)
 
 func get_door():

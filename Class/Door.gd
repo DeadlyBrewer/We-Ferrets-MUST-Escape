@@ -13,7 +13,7 @@ func _ready():
 	mouse_interaction.set_carry_type(Global_Func.Carry_Type.DOOR)
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func open_door():

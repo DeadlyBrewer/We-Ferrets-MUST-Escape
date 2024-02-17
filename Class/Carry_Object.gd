@@ -1,8 +1,8 @@
 extends Node2D
 class_name Carry_Object
 
-@onready var interaction_area = $Interaction_Area
 @onready var data = get_node("/root/Global_Data")
+@onready var interaction_area = $Interaction_Area
 @onready var mouse_interaction = $Mouse_Interaction
 
 var carry_weight
@@ -15,7 +15,7 @@ func _ready():
 	interaction_area.interact = Callable(self, "_on_interact")
 	follow_player = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if follow_player:
 		position = data.player_pos
 

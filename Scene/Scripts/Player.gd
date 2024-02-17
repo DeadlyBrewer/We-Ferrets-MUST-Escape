@@ -1,15 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 500.0
+#const JUMP_VELOCITY = -400.0
 @onready var sprite_2d = $Sprite2D
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var action = false
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Moving Animations
 	if (velocity.x >= 1 || velocity.x <= -1 || velocity.y >= 1 || velocity.y <= -1):
 		sprite_2d.animation = "moving"
@@ -38,8 +38,8 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	var isLeft = velocity.x < 0
-	var isRight = velocity.x > 0
-	var isUp = velocity.y < 0
-	var isDown = velocity.y > 0
-	sprite_2d.flip_h = isLeft
+	#var isLeft = velocity.x < 0
+	#var isRight = velocity.x > 0
+	#var isUp = velocity.y < 0
+	#var isDown = velocity.y > 0
+	#sprite_2d.flip_h = isLeft

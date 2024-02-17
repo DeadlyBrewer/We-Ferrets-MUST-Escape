@@ -17,10 +17,10 @@ func _ready():
 	doors_unlocked = 0
 	object_being_carried = -1
 	
-func _process(delta):
+func _process(_delta):
 	player = get_tree().get_first_node_in_group("Player")
 	player_pos = player.position
-	player.global_position
+	player_global_pos = player.global_position
 
 
 func get_has_object() -> bool:
@@ -41,4 +41,4 @@ func set_object_being_carried(obj):
 	object_being_carried = obj
 	
 func clear_object_being_carried():
-	object_type_being_carried = -1
+	object_type_being_carried = Global_Func.Carry_Type.NONE
