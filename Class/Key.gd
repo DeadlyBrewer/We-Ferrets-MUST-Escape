@@ -1,22 +1,17 @@
-extends Node2D
+extends Carry_Object
 
 class_name Key
 
-@onready var interaction_area = $Interaction_Area
-@onready var mouse_interaction = $Mouse_Interaction
-@onready var data = get_node("/root/Global_Data")
+
+
 var key_color
-var follow_player 
+ 
 
 # Called when the node enters the scene tree for the first time.
 func _ready(): 
-	follow_player = false
-	interaction_area.interact = Callable(self, "_on_interact")
+	super._ready()
 	mouse_interaction.set_carry_type(Global_Func.Carry_Type.KEY)
-	
-func _physics_process(delta):
-	if follow_player:
-		position = data.player_pos
+	carry_object_type = Global_Func.Carry_Type.KEY
 	
 func get_key_color():
 	return key_color
@@ -24,22 +19,4 @@ func get_key_color():
 func use_key():
 	queue_free() # Destory Key
 
-func _on_interact():
-	#DEBUG.dprint("Test Key Interact")
-	#DEBUG.dprint(" Interaction_Manager: var data.has_object -> %s" % data.has_object)
-	# If player has a key, drop key
-	if !follow_player:
-		#data.has_object = true
-		follow_player = true
-		Global_Data.set_object_type_being_carried(Global_Func.Carry_Type.KEY)
-		Global_Data.set_object_being_carried(self)
-	else:
-		#data.has_object = false
-		follow_player = false
-		Global_Data.clear_object_type_being_carried()
-		Global_Data.clear_object_being_carried()
-		
-	data.invert_has_object()
-	
-	
 

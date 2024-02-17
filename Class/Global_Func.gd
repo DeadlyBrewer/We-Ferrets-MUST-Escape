@@ -15,6 +15,13 @@ enum Carry_Type {
 	KEY,
 	DOOR
 }
+
+enum Carry_Weight {
+	NONE,
+	LIGHT,
+	MEDIUM,
+	HEAVY
+}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
