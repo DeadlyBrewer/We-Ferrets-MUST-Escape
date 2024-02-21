@@ -2,9 +2,7 @@ extends Carry_Object
 
 class_name Key
 
-
 var key_color
- 
 
 # Called when the node enters the scene tree for the first time.
 func _ready(): 

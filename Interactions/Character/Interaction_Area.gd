@@ -2,7 +2,9 @@ extends Area2D
 class_name Interaction_Area
 
 var action_name: String = "Object"
+@onready var root = $".."
 @onready var data = get_node("/root/Global_Data")
+
 
 var interact: Callable = func():
 	pass
@@ -26,6 +28,9 @@ func _on_body_exited(_body):
 	
 func get_action_name():
 	return action_name
+	
+func get_root():
+	return root
 	
 func set_action_name(newName):
 	action_name = newName

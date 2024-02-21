@@ -1,7 +1,6 @@
 extends Node
 
-# Set debugging mode
-# 0: off | 1: on
+# Class meant for static global variables and functions
 
 enum Key_Color {
 	RED,
@@ -13,7 +12,8 @@ enum Key_Color {
 enum Carry_Type {
 	NONE,
 	KEY,
-	DOOR
+	DOOR,
+	WEIGHT
 }
 
 enum Carry_Weight {
@@ -22,6 +22,15 @@ enum Carry_Weight {
 	MEDIUM,
 	HEAVY
 }
+
+# Used to help calculate what is needed for pressure plate and weights
+const Carry_Weight_Values = {
+	"NONE": 0,
+	"LIGHT": 1,
+	"MEDIUM": 3,
+	"HEAVY": 6
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

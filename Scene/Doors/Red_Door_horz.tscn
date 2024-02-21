@@ -1,26 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://d00wfnbbi84im"]
+[gd_scene load_steps=8 format=3 uid="uid://b2wcl34rhi3cg"]
 
-[ext_resource type="Texture2D" uid="uid://descp518mxnag" path="res://Assets/Objects/green_door.png" id="1_c7r7y"]
-[ext_resource type="Script" path="res://Scene/Scripts/Green_Door.gd" id="1_xtf7a"]
-[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="2_lio6i"]
-[ext_resource type="Script" path="res://Interactions/Character/Door_Area.gd" id="4_4s1k8"]
+[ext_resource type="Script" path="res://Scripts/Doors/Red_Door.gd" id="1_02vwa"]
+[ext_resource type="Texture2D" uid="uid://cgcbuhx1fg0gd" path="res://Assets/Objects/red_door_horz.png" id="2_g575p"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="3_ot0lv"]
+[ext_resource type="Script" path="res://Interactions/Character/Door_Area.gd" id="4_u23k4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5yqlr"]
-size = Vector2(12, 18)
+size = Vector2(12, 25)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0leqs"]
 radius = 6.0
-height = 18.75
+height = 25.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqy1q"]
 radius = 20.0
 
-[node name="Green_Door" type="Node2D"]
+[node name="Red_Door" type="Node2D"]
 scale = Vector2(2, 2.66667)
-script = ExtResource("1_xtf7a")
+script = ExtResource("1_02vwa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_c7r7y")
+scale = Vector2(1.389, 1)
+texture = ExtResource("2_g575p")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 4
@@ -28,18 +29,20 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -1.78814e-07)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_5yqlr")
 
-[node name="Mouse_Interaction" parent="." instance=ExtResource("2_lio6i")]
+[node name="Mouse_Interaction" parent="." instance=ExtResource("3_ot0lv")]
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_0leqs")
 
 [node name="Unlock_Area" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("4_4s1k8")
+script = ExtResource("4_u23k4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Unlock_Area"]
 shape = SubResource("CircleShape2D_dqy1q")

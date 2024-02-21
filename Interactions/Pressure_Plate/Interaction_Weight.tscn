@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bht4clr8nel15"]
+
+[ext_resource type="Script" path="res://Interactions/Pressure_Plate/Interaction_Weight.gd" id="1_5hd3f"]
+
+[node name="Interaction_Weight" type="Area2D"]
+script = ExtResource("1_5hd3f")

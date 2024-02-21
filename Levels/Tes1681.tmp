@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bplst85m61ha6"]
+[gd_scene load_steps=16 format=3 uid="uid://bplst85m61ha6"]
 
 [ext_resource type="Texture2D" uid="uid://sah4tegb5g8n" path="res://Assets/Backgrounds/backgroundColorGrass.png" id="1_2qc3x"]
 [ext_resource type="Texture2D" uid="uid://ceck3a0kqqp7x" path="res://Assets/Tiles/Walls.png" id="2_xxlmd"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cayyj50ls5mth" path="res://Scene/Doors/Green_Door_horz.tscn" id="11_hk1nj"]
 [ext_resource type="PackedScene" uid="uid://b2wcl34rhi3cg" path="res://Scene/Doors/Red_Door_horz.tscn" id="12_ugaql"]
 [ext_resource type="PackedScene" uid="uid://bjd5dn0hict1x" path="res://Scene/Pressure_Plate.tscn" id="13_2teyd"]
-[ext_resource type="PackedScene" uid="uid://bhqrxsiuvic58" path="res://Scene/Weight_Light.tscn" id="14_saxgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqu6j"]
 texture = ExtResource("2_xxlmd")
@@ -157,8 +156,3 @@ position = Vector2(123, 73)
 position = Vector2(68, 127)
 
 [node name="Pressure_Plate" parent="Testing_Map" instance=ExtResource("13_2teyd")]
-z_index = -1
-position = Vector2(332, 332)
-
-[node name="Weight_Light" parent="Testing_Map" instance=ExtResource("14_saxgn")]
-position = Vector2(273, 270)

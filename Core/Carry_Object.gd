@@ -1,7 +1,6 @@
 extends Node2D
 class_name Carry_Object
 
-@onready var data = get_node("/root/Global_Data")
 @onready var interaction_area = $Interaction_Area
 @onready var interaction_mouse = $Mouse_Interaction
 
@@ -17,7 +16,13 @@ func _ready():
 
 func _physics_process(_delta):
 	if follow_player:
-		position = data.player_pos
+		position = Global_Data.player_pos
+		
+func get_carry_object_type():
+	return carry_object_type		
+	
+func get_carry_weight():
+	return carry_weight
 
 func _on_interact():
 	#DEBUG.dprint("Test Key Interact")
@@ -34,4 +39,4 @@ func _on_interact():
 		Global_Data.clear_object_type_being_carried()
 		Global_Data.clear_object_being_carried()
 		
-	data.invert_has_object()
+	Global_Data.invert_has_object()

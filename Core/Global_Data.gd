@@ -1,5 +1,8 @@
 extends Node
 
+# DEBUG
+var DEBUG_ONE = false
+
 var player
 var player_pos
 var player_global_pos
@@ -22,7 +25,8 @@ func _process(_delta):
 	player_pos = player.position
 	player_global_pos = player.global_position
 
-
+# Quick way to tell if object is being carried (cleaner?) - could just use 
+# object_being_carried = Global_Func.Carry_Type.NONE
 func get_has_object() -> bool:
 	#DEBUG.dprint(" Global_data: get_has_object -> %s" % has_object)
 	return has_object
@@ -37,8 +41,10 @@ func set_object_type_being_carried(obj: Global_Func.Carry_Type):
 func clear_object_type_being_carried():
 	object_type_being_carried = Global_Func.Carry_Type.NONE
 	
+# Will be the actual object being carried
 func set_object_being_carried(obj):
 	object_being_carried = obj
 	
+# NOT a copy of Type.  Using Carry_type.NONE as a NIL type variable
 func clear_object_being_carried():
 	object_type_being_carried = Global_Func.Carry_Type.NONE

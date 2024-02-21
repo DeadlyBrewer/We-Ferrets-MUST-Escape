@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 Intearaction_Manager="*res://Interactions/Character/Intearaction_Manager.tscn"
-Global_Func="*res://Class/Global_Func.gd"
-DEBUG="*res://Class/DEBUG.gd"
-Global_Data="*res://Class/Global_Data.gd"
+Global_Func="*res://Core/Global_Func.gd"
+DEBUG="*res://Core/DEBUG.gd"
+Global_Data="*res://Core/Global_Data.gd"
 
 [display]
 
@@ -77,6 +77,7 @@ interact={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Object"
 2d_physics/layer_4="Barrier"
+2d_physics/layer_5="Weight"
 
 [physics]
 
