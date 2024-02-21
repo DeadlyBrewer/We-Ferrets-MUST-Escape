@@ -16,11 +16,11 @@ func _ready():
 func _process(_delta):
 	if show_label:
 		label.text = "[center]" + over_text + "[/center]"
-		if carry_type == Global_Func.Carry_Type.KEY:
+		if carry_type == Global_Func.Carry_Type.KEY || carry_type == Global_Func.Carry_Type.WEIGHT:
 			label.global_position = global_position
 			label.global_position.y -= 36
 			label.global_position.x -= label.size.x / 2
-		if carry_type == Global_Func.Carry_Type.DOOR:
+		elif carry_type == Global_Func.Carry_Type.DOOR:
 			label.global_position = global_position
 			label.global_position.y -= 50
 			label.global_position.x -= 80

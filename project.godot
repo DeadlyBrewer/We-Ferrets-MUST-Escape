@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="We-ferrets-must-escape"
-run/main_scene="res://Levels/Testing_Map.tscn"
+run/main_scene="res://Levels/Maps/Testing_Map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -1,4 +1,4 @@
-extends Area2D
+extends Pressure_Plate
 class_name Pressure_Plate_Area
 
 @onready var pressure_plate = $".."
@@ -17,5 +17,5 @@ func _on_area_entered(area: Interaction_Weight):
 
 
 func _on_area_exited(area: Interaction_Weight):
-	DEBUG.dprint("Pressure_Plate_Area: _on_area_exited")
+	#DEBUG.dprint("Pressure_Plate_Area: _on_area_exited")
 	pressure_plate.unregister_weight(area)

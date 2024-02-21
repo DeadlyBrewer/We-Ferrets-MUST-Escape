@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bhqrxsiuvic58"]
 
-[ext_resource type="Script" path="res://Scripts/Weight.gd" id="1_dfap6"]
+[ext_resource type="Script" path="res://Scripts/Weights/Weight_Light.gd" id="1_kh8e3"]
 [ext_resource type="Texture2D" uid="uid://dvl5pojvxbxgg" path="res://Assets/Objects/Pickups/weight_light.png" id="2_4y41d"]
 [ext_resource type="Script" path="res://Interactions/Character/Interaction_Area.gd" id="3_hkl6d"]
 [ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="4_0qs6q"]
@@ -16,7 +16,7 @@ radius = 14.0357
 radius = 14.0
 
 [node name="Weight_Light" type="Node2D"]
-script = ExtResource("1_dfap6")
+script = ExtResource("1_kh8e3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4y41d")
