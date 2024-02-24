@@ -13,7 +13,8 @@ enum Carry_Type {
 	NONE,
 	KEY,
 	DOOR,
-	WEIGHT
+	WEIGHT,
+	PRESSURE_PLATE
 }
 
 enum Carry_Weight {

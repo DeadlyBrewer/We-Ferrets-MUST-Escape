@@ -25,6 +25,10 @@ func _process(_delta):
 			label.global_position.y -= 50
 			label.global_position.x -= 80
 			label.scale = Vector2(0.5, 0.5)
+		elif carry_type == Global_Func.Carry_Type.PRESSURE_PLATE:	
+			label.global_position = global_position
+			label.global_position.y -= 36
+			label.global_position.x -= label.size.x / 2
 		label.show()
 	else:
 		label.hide()

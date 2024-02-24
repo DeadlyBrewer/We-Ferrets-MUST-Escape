@@ -36,18 +36,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uhn"]
-size = Vector2(32, 32)
+size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fjque"]
-size = Vector2(32, 32)
+size = Vector2(48, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8qvr"]
-size = Vector2(32, 32)
+size = Vector2(48, 48)
 
 [node name="Pressure_Plate_Medium" type="Node2D"]
 script = ExtResource("1_688jr")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_e0sjc")
 
 [node name="Interaction_Area" parent="." instance=ExtResource("5_7ijy4")]
