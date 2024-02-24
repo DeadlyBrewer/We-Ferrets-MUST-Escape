@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://cayyj50ls5mth"]
+
+[ext_resource type="Script" path="res://Scripts/Doors/Green_Door.gd" id="1_lgfco"]
+[ext_resource type="Texture2D" uid="uid://d107yonod8oul" path="res://Assets/Objects/green_door_horz.png" id="2_7sirb"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="3_k58py"]
+[ext_resource type="Script" path="res://Interactions/Character/Door_Area.gd" id="4_rhijj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yqlr"]
+size = Vector2(12, 25)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0leqs"]
+radius = 6.0
+height = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqy1q"]
+radius = 13.0054
+
+[node name="Green_Door" type="Node2D"]
+scale = Vector2(2, 2.66667)
+script = ExtResource("1_lgfco")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.389, 1)
+texture = ExtResource("2_7sirb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -4.23193e-06)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_5yqlr")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("3_k58py")]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_0leqs")
+
+[node name="Unlock_Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_rhijj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Unlock_Area"]
+shape = SubResource("CircleShape2D_dqy1q")
+
+[connection signal="body_entered" from="Unlock_Area" to="Unlock_Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Unlock_Area" to="Unlock_Area" method="_on_body_exited"]

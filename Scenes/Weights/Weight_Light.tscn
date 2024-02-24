@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhqrxsiuvic58"]
+
+[ext_resource type="Script" path="res://Scripts/Weights/Weight_Light.gd" id="1_kh8e3"]
+[ext_resource type="Texture2D" uid="uid://dvl5pojvxbxgg" path="res://Assets/Objects/Pickups/weight_light.png" id="2_4y41d"]
+[ext_resource type="Script" path="res://Interactions/Character/Interaction_Area.gd" id="3_hkl6d"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="4_0qs6q"]
+[ext_resource type="PackedScene" uid="uid://bht4clr8nel15" path="res://Interactions/Pressure_Plate/Interaction_Weight.tscn" id="5_27fms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
+radius = 14.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyo10"]
+radius = 14.0357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jict8"]
+radius = 14.0
+
+[node name="Weight_Light" type="Node2D"]
+script = ExtResource("1_kh8e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4y41d")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 10
+script = ExtResource("3_hkl6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_bcemw")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("4_0qs6q")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+shape = SubResource("CircleShape2D_eyo10")
+
+[node name="Interaction_Weight" parent="." instance=ExtResource("5_27fms")]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Weight"]
+shape = SubResource("CircleShape2D_jict8")
+
+[connection signal="mouse_entered" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_exited"]
+[connection signal="mouse_shape_entered" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_shape_entered"]

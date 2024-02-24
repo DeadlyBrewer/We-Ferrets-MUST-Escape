@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://uu7nm8am4rpi"]
+
+[ext_resource type="Script" path="res://Scripts/Keys/Green_Key.gd" id="1_4i8gg"]
+[ext_resource type="Script" path="res://Interactions/Character/Interaction_Area.gd" id="1_tqd7n"]
+[ext_resource type="Texture2D" uid="uid://82kwe6jekeaa" path="res://Assets/Objects/Pickups/green_key.png" id="2_kplds"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="4_k2d5f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6hsyo"]
+
+[node name="Green_Key" type="Node2D"]
+script = ExtResource("1_4i8gg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_kplds")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("1_tqd7n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_bcemw")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("4_k2d5f")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+shape = SubResource("CircleShape2D_6hsyo")

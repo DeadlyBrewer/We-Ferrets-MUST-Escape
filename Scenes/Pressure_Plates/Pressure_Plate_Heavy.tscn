@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://2lj7hrriwj7e"]
+
+[ext_resource type="Script" path="res://Scripts/Pressure_Plates/Pressure_Plate_Heavy.gd" id="1_h0562"]
+[ext_resource type="Texture2D" uid="uid://silx4msvm1ju" path="res://Assets/Objects/Pressure_Plate/Pressure_Plate_Off_Heavy.png" id="2_wfoqi"]
+[ext_resource type="Texture2D" uid="uid://dc6c3iankq22v" path="res://Assets/Objects/Pressure_Plate/Pressure_Plate_Half_Heavy.png" id="3_ad3bf"]
+[ext_resource type="Texture2D" uid="uid://ci65k7tuof8r5" path="res://Assets/Objects/Pressure_Plate/Pressure_Plate_On_Heavy.png" id="4_74m7u"]
+[ext_resource type="PackedScene" uid="uid://btqbv6a1kla5e" path="res://Interactions/Character/Interaction_Area.tscn" id="5_qpe1b"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="6_0so8t"]
+[ext_resource type="Script" path="res://Interactions/Pressure_Plate/Pressure_Plate_Interaction_Area.gd" id="7_cdo3p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0sjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wfoqi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ad3bf")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_74m7u")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uhn"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjque"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8qvr"]
+size = Vector2(64, 64)
+
+[node name="Pressure_Plate_Heavy" type="Node2D"]
+script = ExtResource("1_h0562")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_e0sjc")
+animation = &"on"
+
+[node name="Interaction_Area" parent="." instance=ExtResource("5_qpe1b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("RectangleShape2D_o5uhn")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("6_0so8t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+shape = SubResource("RectangleShape2D_fjque")
+
+[node name="Pressure_Plate_Interaction_Area" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("7_cdo3p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pressure_Plate_Interaction_Area"]
+shape = SubResource("RectangleShape2D_b8qvr")
+
+[connection signal="area_entered" from="Pressure_Plate_Interaction_Area" to="Pressure_Plate_Interaction_Area" method="_on_area_entered"]
+[connection signal="area_exited" from="Pressure_Plate_Interaction_Area" to="Pressure_Plate_Interaction_Area" method="_on_area_exited"]

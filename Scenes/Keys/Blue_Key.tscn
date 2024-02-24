@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://brimuifupmxek"]
+
+[ext_resource type="Script" path="res://Scripts/Keys/Blue_Key.gd" id="1_f65fv"]
+[ext_resource type="Texture2D" uid="uid://ktvdugx1fmtu" path="res://Assets/Objects/Pickups/blue_key.png" id="2_ankho"]
+[ext_resource type="Script" path="res://Interactions/Character/Interaction_Area.gd" id="3_a8hnx"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="4_tnbeb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bcemw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eyo10"]
+
+[node name="Blue_Key" type="Node2D"]
+script = ExtResource("1_f65fv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ankho")
+
+[node name="Interaction_Area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 10
+script = ExtResource("3_a8hnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_bcemw")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("4_tnbeb")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+shape = SubResource("CircleShape2D_eyo10")
+
+[connection signal="mouse_entered" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_exited"]
+[connection signal="mouse_shape_entered" from="Interaction_Area" to="Interaction_Area" method="_on_mouse_shape_entered"]
