@@ -3,7 +3,7 @@ extends Area2D
 @onready var label = $Label
 var over_text: String = "Mouse_Over"
 var show_label = false
-var carry_type
+var type
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,16 +16,16 @@ func _ready():
 func _process(_delta):
 	if show_label:
 		label.text = "[center]" + over_text + "[/center]"
-		if carry_type == Global_Func.Carry_Type.KEY || carry_type == Global_Func.Carry_Type.WEIGHT:
+		if type == Global_Func.Object_Type.KEY || type == Global_Func.Object_Type.WEIGHT || type == Global_Func.Object_Type.SWITCH:
 			label.global_position = global_position
 			label.global_position.y -= 36
 			label.global_position.x -= label.size.x / 2
-		elif carry_type == Global_Func.Carry_Type.DOOR:
+		elif type == Global_Func.Object_Type.DOOR:
 			label.global_position = global_position
 			label.global_position.y -= 50
 			label.global_position.x -= 80
 			label.scale = Vector2(0.5, 0.5)
-		elif carry_type == Global_Func.Carry_Type.PRESSURE_PLATE:	
+		elif type == Global_Func.Object_Type.PRESSURE_PLATE:	
 			label.global_position = global_position
 			label.global_position.y -= 36
 			label.global_position.x -= label.size.x / 2
@@ -50,8 +50,8 @@ func set_over_text(new_text):
 func get_over_text() -> String:
 	return over_text
 	
-func set_carry_type(new_carry_type):
-	carry_type = new_carry_type
+func set_type(new_type):
+	type = new_type
 
 func get_carry_type() -> int:
-	return carry_type
+	return type

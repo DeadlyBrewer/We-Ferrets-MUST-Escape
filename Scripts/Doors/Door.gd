@@ -10,7 +10,7 @@ var key_color
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mouse_interaction.set_carry_type(Global_Func.Carry_Type.DOOR)
+	mouse_interaction.set_type(Global_Func.Object_Type.DOOR)
 	
 		
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -58,7 +58,7 @@ func _input(event):
 	if event.is_action_pressed("interact") && can_interact:
 		# Open Door
 		if door_area.size() > 0:
-			if Global_Data.object_type_being_carried == Global_Func.Carry_Type.KEY:
+			if Global_Data.object_type_being_carried == Global_Func.Object_Type.KEY:
 				if door_area[0].get_door().get_key_color() == Global_Data.object_being_carried.get_key_color():
 					#DEBUG.dprint("Key and Door Interact")
 					door_area[0].door.open_door()

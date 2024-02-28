@@ -15,7 +15,7 @@ var active_weights = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	interaction_mouse.set_carry_type(Global_Func.Carry_Type.PRESSURE_PLATE) 
+	interaction_mouse.set_type(Global_Func.Object_Type.PRESSURE_PLATE) 
 
 # Uses same interaction_area for Labels and pickup
 func register_weight(area: Interaction_Weight):

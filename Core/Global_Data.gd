@@ -8,7 +8,7 @@ var player_pos
 var player_global_pos
 
 var has_object
-var object_type_being_carried: Global_Func.Carry_Type 
+var object_type_being_carried: Global_Func.Object_Type 
 var object_being_carried # Object being carried
 
 var doors_unlocked
@@ -16,7 +16,7 @@ var doors_unlocked
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	has_object = false
-	object_type_being_carried = Global_Func.Carry_Type.NONE
+	object_type_being_carried = Global_Func.Object_Type.NONE
 	doors_unlocked = 0
 	object_being_carried = -1
 	
@@ -35,11 +35,11 @@ func invert_has_object():
 	has_object = !has_object
 	#DEBUG.dprint(" Global_data: invert_has_object -> %s" % has_object)
 
-func set_object_type_being_carried(obj: Global_Func.Carry_Type):
+func set_object_type_being_carried(obj: Global_Func.Object_Type):
 	object_type_being_carried = obj
 	
 func clear_object_type_being_carried():
-	object_type_being_carried = Global_Func.Carry_Type.NONE
+	object_type_being_carried = Global_Func.Object_Type.NONE
 	
 # Will be the actual object being carried
 func set_object_being_carried(obj):
@@ -47,4 +47,4 @@ func set_object_being_carried(obj):
 	
 # NOT a copy of Type.  Using Carry_type.NONE as a NIL type variable
 func clear_object_being_carried():
-	object_type_being_carried = Global_Func.Carry_Type.NONE
+	object_type_being_carried = Global_Func.Object_Type.NONE

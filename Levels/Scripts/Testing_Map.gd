@@ -12,6 +12,11 @@ class_name Testing_Map
 @onready var door3 = $Switch_Doors/Switch_Door_Heavy_1
 @onready var door4 = $Switch_Doors/Switch_Door_Heavy_2
 
+@onready var switch = $Switches/Switch
+@onready var door5 = $Switch_Doors/Switch_Door_Switch_1
+@onready var door6 = $Switch_Doors/Switch_Door_Switch_2
+
+
 func _physics_process(_delta):
 	if pp_light_1.get_is_active():
 		door1.set_open()
@@ -30,6 +35,12 @@ func _physics_process(_delta):
 		door3.set_closed()
 		door4.set_closed()
 		
+	if switch.get_is_active():
+		door5.set_open()
+		door6.set_open()
+	else:
+		door5.set_closed()
+		door6.set_closed()
 #func get_active_pp_l_1():
 	#return pp_light_1.get_is_active()
 #

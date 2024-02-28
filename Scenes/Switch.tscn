@@ -1,6 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb475slphdw2u"]
+[gd_scene load_steps=9 format=3 uid="uid://bb475slphdw2u"]
 
 [ext_resource type="Script" path="res://Scripts/Switch.gd" id="1_37j6q"]
+[ext_resource type="Texture2D" uid="uid://bn4pc6ul381ip" path="res://Assets/switch_off.png" id="1_kxvjq"]
+[ext_resource type="Texture2D" uid="uid://cpmm04grwdwmm" path="res://Assets/switch_on.png" id="2_mvi48"]
+[ext_resource type="PackedScene" uid="uid://btqbv6a1kla5e" path="res://Interactions/Character/Interaction_Area.tscn" id="4_4nvsy"]
+[ext_resource type="PackedScene" uid="uid://205nj156teo4" path="res://Interactions/Mouse/Interaction_Mouse.tscn" id="5_y4cwp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7eabj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kxvjq")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mvi48")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_luhbw"]
+radius = 26.0192
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rqpr"]
+radius = 26.0
 
 [node name="Switch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_7eabj")
+animation = &"off"
 script = ExtResource("1_37j6q")
+
+[node name="Interaction_Area" parent="." instance=ExtResource("4_4nvsy")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction_Area"]
+shape = SubResource("CircleShape2D_luhbw")
+
+[node name="Mouse_Interaction" parent="." instance=ExtResource("5_y4cwp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouse_Interaction"]
+shape = SubResource("CircleShape2D_3rqpr")

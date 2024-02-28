@@ -9,12 +9,13 @@ enum Key_Color {
 	TEST
 }
 
-enum Carry_Type {
+enum Object_Type {
 	NONE,
 	KEY,
 	DOOR,
 	WEIGHT,
-	PRESSURE_PLATE
+	PRESSURE_PLATE,
+	SWITCH
 }
 
 enum Carry_Weight {

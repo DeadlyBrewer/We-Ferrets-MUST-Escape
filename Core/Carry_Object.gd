@@ -10,7 +10,7 @@ var carry_object_type
 
 func _ready(): 
 	carry_weight = Global_Func.Carry_Weight.NONE # Default
-	carry_object_type = Global_Func.Carry_Type.NONE # Default
+	carry_object_type = Global_Func.Object_Type.NONE # Default
 	interaction_area.interact = Callable(self, "_on_interact")
 	follow_player = false
 

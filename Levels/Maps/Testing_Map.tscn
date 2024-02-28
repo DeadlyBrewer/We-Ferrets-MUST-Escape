@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bplst85m61ha6"]
+[gd_scene load_steps=24 format=3 uid="uid://bplst85m61ha6"]
 
 [ext_resource type="Script" path="res://Levels/Scripts/Testing_Map.gd" id="1_f8w8w"]
 [ext_resource type="PackedScene" uid="uid://cg4c04eu58hhh" path="res://Scenes/Player.tscn" id="2_7o2ro"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bjd5dn0hict1x" path="res://Scenes/Pressure_Plates/Pressure_Plate_Light.tscn" id="18_25afh"]
 [ext_resource type="PackedScene" uid="uid://2lj7hrriwj7e" path="res://Scenes/Pressure_Plates/Pressure_Plate_Heavy.tscn" id="19_qlbr1"]
 [ext_resource type="PackedScene" uid="uid://b1vvhc03s3yxs" path="res://Scenes/Doors/Switch_Door.tscn" id="20_xiekr"]
+[ext_resource type="PackedScene" uid="uid://bb475slphdw2u" path="res://Scenes/Switch.tscn" id="21_l6rob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqu6j"]
 texture = ExtResource("4_0yfm5")
@@ -207,3 +208,17 @@ scale = Vector2(1.5, 1.85938)
 position = Vector2(504, 120)
 rotation = 1.5708
 scale = Vector2(1.5, 1.85938)
+
+[node name="Switch_Door_Switch_1" parent="Testing_Map/Switch_Doors" instance=ExtResource("20_xiekr")]
+position = Vector2(552, 72)
+scale = Vector2(1.5, 1.8125)
+
+[node name="Switch_Door_Switch_2" parent="Testing_Map/Switch_Doors" instance=ExtResource("20_xiekr")]
+position = Vector2(72, 552)
+rotation = 1.5708
+scale = Vector2(1.5, 1.8125)
+
+[node name="Switches" type="Node" parent="Testing_Map"]
+
+[node name="Switch" parent="Testing_Map/Switches" instance=ExtResource("21_l6rob")]
+position = Vector2(407, 409)
